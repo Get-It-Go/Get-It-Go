@@ -1,18 +1,26 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Products</h1>
+<%= link_to "ALL" ,'/products'%>
+<%= link_to "가구" ,'/products?cate=가구'%>
+<%= link_to "청소" ,'/products?cate=청소'%>
+<%= link_to "욕실" ,'/products?cate=욕실'%>
+<%= link_to "세탁" ,'/products?cate=세탁'%>
+<%= link_to "주방" ,'/products?cate=주방'%>
+<%= link_to "문구" ,'/products?cate=문구'%>
+<%= link_to "생활잡화" ,'/products?cate=생활잡화'%>
+<h1><%=@cate%> Products</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Category</th>
-      <th>Name</th>
-      <th>Content</th>
-      <th>Status</th>
-      <th>Price</th>
-      <th>Address num</th>
-      <th>Address text</th>
-      <th>Address text2</th>
+      <th>카테고리</th>
+      <th>물품명</th>
+      <th>내용</th>
+      <th>상태</th>
+      <th>가격</th>
+      <th>수령방법</th>
+      <th>우편번호</th>
+      <th>주소</th>
+      <th>상세주소</th>
       <th>User_id</th>
       <th colspan="3"></th>
     </tr>
@@ -26,6 +34,7 @@
         <td><%= product.content %></td>
         <td><%= product.status %></td>
         <td><%= product.price %></td>
+        <td><%= product.delivery %></td>
         <td><%= product.address_num %></td>
         <td><%= product.address_text %></td>
         <td><%= product.address_text2 %></td>
@@ -41,4 +50,4 @@
 
 <br>
 
-<%= link_to 'New Product', new_product_path %>
+<%= link_to '나눔등록하기', new_product_path %>
