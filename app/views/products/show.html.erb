@@ -1,45 +1,50 @@
 <p id="notice"><%= notice %></p>
 <p>
-  <strong>Category:</strong>
+  <strong>카테고리:</strong>
   <%= @product.category %>
 </p>
 <p>
-  <strong>Name:</strong>
+  <strong>물건명:</strong>
   <%= @product.name %>
 </p>
 
 <p>
-  <strong>Content:</strong>
+  <strong>설명(상태):</strong>
   <%= @product.content %>
 </p>
 
 <p>
-  <strong>Status:</strong>
+  <strong>상태:</strong>
   <%= @product.status %>
 </p>
 
 <p>
-  <strong>Image:</strong>
+  <strong>사진:</strong>
   <img src="<%= @product.image %>">
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong>가격:</strong>
   <%= @product.price %>
 </p>
 
 <p>
-  <strong>Address num:</strong>
+  <strong>수령방법:</strong>
+  <%= @product.delivery %>
+</p>
+
+<p>
+  <strong>우편번호:</strong>
   <%= @product.address_num %>
 </p>
 
 <p>
-  <strong>Address text:</strong>
+  <strong>주소</strong>
   <%= @product.address_text %>
 </p>
 
 <p>
-  <strong>Address text2:</strong>
+  <strong>상세주소</strong>
   <%= @product.address_text2 %>
 </p>
 
