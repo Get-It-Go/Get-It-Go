@@ -1,0 +1,58 @@
+<%= form_with(model: product, local: true, multipart: true) do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :카테고리 %>
+    <%= form.select :category, options_for_select(["하나를 고르세요", "가구", "청소","욕실","세탁","주방","문구","생활잡화"], :disabled => ["하나를 고르세요"]), id: :product_category %>
+  </div>
+
+  <div class="field">
+    <%= form.label :물건명 %>
+    <%= form.text_area :name, id: :product_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :"설명(물건의 상태)" %>
+    <%= form.text_area :content, id: :product_content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :가격 %>
+    <%= form.text_area :price, id: :product_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :사진 %>
+    <%= form.file_field :image, id: :product_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :우편번호 %>
+    <%= form.text_area :address_num, id: :product_address_num %>
+  </div>
+
+  <div class="field">
+    <%= form.label :주소 %>
+    <%= form.text_area :address_text, id: :product_address_text %>
+  </div>
+
+  <div class="field">
+    <%= form.label :상세주소 %>
+    <%= form.text_area :address_text2, id: :product_address_text2 %>
+  </div>
+  
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
