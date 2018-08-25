@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20180824175508) do
     t.text "address_text2"
     t.integer "user_id"
     t.text "category"
-    t.text "delivery"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
