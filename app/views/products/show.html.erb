@@ -1,3 +1,39 @@
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  
+  <div id="mySidenav" class="sidenav" style="z-index:4">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/products">All</a>
+    <a href="/products?cate=가구">가구</a>
+    <a href="/products?cate=청소">청소 도구</a>
+    <a href="/products?cate=욕실">욕실 용품</a>
+    <a href="/products?cate=세탁">세탁 도구</a>
+    <a href="/products?cate=주방">주방 용품</a>
+    <a href="/products?cate=문구">문구류</a>
+    <a href="/products?cate=생활잡화">생활잡화</a>
+    <a href="/products?cate=식품">식품</a>
+  </div>
+  <nav>
+    <span style="font-size:30px;padding:50px;margin-top:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+  </nav>
+   <script>
+  function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+  }
+   function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+  }
+  </script>
+
+
+
+
+<div style="width:70vw; margin:0 auto; text-align:center">
+<p style="margin-top:100px">
+  <img src="<%= @product.image.url %>" height=300 width=300>
+</p>
+
 <p id="notice"><%= notice %></p>
 <p>
   <strong>카테고리:</strong>
@@ -22,9 +58,7 @@
   <%= @product.status %>
 </p>
 
-<p>
-  <img src="<%= @product.image.url %>" height=50 width=50>
-</p>
+
 
 <p>
   <strong>가격:</strong>
@@ -42,10 +76,6 @@
 </p>
 
 
-<p>
-  <strong>User:</strong>
-  <%= @product.user_id %>
-</p>
 <%# if current_user %>
   <%# if @exist_flag == false%>    
   <%#= form_tag "/conversations" do %>
@@ -77,3 +107,6 @@
             elem.setAttribute("onclick", "hello(this)")
         }
     </script>
+
+
+</div>
