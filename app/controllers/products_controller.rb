@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
       @cate = "검색"
     elsif @cate.nil?
       @products = Product.all
+      @cate = "전체"
     else
       @products = Product.where(category: @cate)
     end
