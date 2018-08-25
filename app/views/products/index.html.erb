@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+u<!DOCTYPE html>
 
 <html>
 <head>
@@ -22,12 +22,15 @@
   
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#">세탁용품</a>
-    <a href="#">청소도구/용품</a>
-    <a href="#">욕실용품</a>
-    <a href="#">주방용품</a>
-    <a href="#">가구/생활잡화</a>
-    <a href="#">문구류</a>
+    <a href="/products">All</a>
+    <a href="/products?cate=가구">가구</a>
+    <a href="/products?cate=청소">청소 도구</a>
+    <a href="/products?cate=욕실">욕실 용품</a>
+    <a href="/products?cate=세탁">세탁 도구</a>
+    <a href="/products?cate=주방">주방 용품</a>
+    <a href="/products?cate=문구">문구류</a>
+    <a href="/products?cate=생활잡화">생활잡화</a>
+    <a href="/products?cate=식품">식품</a>
   </div>
    <nav>
     <span style="font-size:30px;margin:20px 10px;cursor:pointer" onclick="openNav()">&#9776; </span>
@@ -81,14 +84,6 @@
 --> 
 <p id="notice"><%= notice %></p>
 
-<%= link_to "ALL" ,'/products'%>
-<%= link_to "가구" ,'/products?cate=가구'%>
-<%= link_to "청소" ,'/products?cate=청소'%>
-<%= link_to "욕실" ,'/products?cate=욕실'%>
-<%= link_to "세탁" ,'/products?cate=세탁'%>
-<%= link_to "주방" ,'/products?cate=주방'%>
-<%= link_to "문구" ,'/products?cate=문구'%>
-<%= link_to "생활잡화" ,'/products?cate=생활잡화'%>
 
 <p>
   <%= form_tag(products_path, :method => "get", id: "search-form") do %>
