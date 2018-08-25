@@ -37,6 +37,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :전달방법 %>
+    <%= form.select :delivery, options_for_select(["하나를 고르세요", "1:1전해주기", "두고가기"], :disabled => ["하나를 고르세요"]) %>
+  </div>
+
+  <div class="field">
     <%= form.label :우편번호 %>
     <%= form.text_area :address_num, id: :product_address_num %>
   </div>

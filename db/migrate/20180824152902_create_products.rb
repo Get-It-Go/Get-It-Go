@@ -11,7 +11,7 @@ class CreateProducts < ActiveRecord::Migration[5.1]
       t.text :address_text2
       t.integer :user_id
       t.text :category
-
+      t.text :delivery
       t.timestamps
     end
   end
