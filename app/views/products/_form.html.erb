@@ -55,9 +55,14 @@
     <%= form.label :상세주소 %>
     <%= form.text_area :address_text2, id: :product_address_text2 %>
   </div>
-  
+
+  <div class="field">
+    <% form.label :user_id %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
+
 <% end %>
