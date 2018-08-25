@@ -1,7 +1,11 @@
 <div class="home_section">
 	<div class="home_section1">
 		<div class="card-body">
-			<%= link_to '나눌래요', new_product_path %>
+			<% if user_signed_in? %>
+				<%= link_to '나눌래요', new_product_path %>
+			<% else %>
+				<%= link_to '나눌래요', new_user_session_path, method: :get %>
+			<% end %>
 		</div>
 	</div>
 	<div class="home_section2">
