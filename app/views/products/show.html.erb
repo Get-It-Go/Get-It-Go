@@ -19,7 +19,7 @@
 </p>
 
 <p>
-  <img src="<%= @product.image %>">
+  <img src="<%= @product.image.url %>">
 </p>
 
 <p>
@@ -39,31 +39,26 @@
 
 
 <p>
-  <strong>상세주소</strong>
-  <%= @product.address_text2 %>
-</p>
-
-<p>
   <strong>User:</strong>
   <%= @product.user_id %>
 </p>
-<% if current_user %>
-  <% if @exist_flag == false%>    
-  <%= form_tag "/conversations" do %>
-    <%= hidden_field_tag 'user1_id', @product.user_id %>
-    <%= hidden_field_tag 'user2_id', current_user.id %>
-    <%= hidden_field_tag 'product_id', @product.id %>
-    <%= submit_tag '판매자와 대화하기' %>
-  <% end %>
+<%# if current_user %>
+  <%# if @exist_flag == false%>    
+  <%#= form_tag "/conversations" do %>
+    <%#= hidden_field_tag 'user1_id', @product.user_id %>
+    <%#= hidden_field_tag 'user2_id', current_user.id %>
+    <%#= hidden_field_tag 'product_id', @product.id %>
+    <%#= submit_tag '판매자와 대화하기' %>
+  <%# end %>
 
-  <% else %>
+  <%# else %>
     <%#= link_to '계속해서 대화하기' , "conversations/#{@conversation.id}/" %>
     <%#= form_tag "/conversations/#{@conversation.id}" do %>
-    <a href="/conversations/<%= @conversation.id %>"> 계속해서 대화하기 </a>
+     <%#=a href="/conversations/<%= @conversation.id %> 
     <%#= submit_tag '계속해서 대화하기' %>
     <%# end %>
-  <% end %>
-<% end %>
+  <%# end %>
+<%# end %>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
