@@ -39,15 +39,20 @@
         <div class="col-sm-6">
           <div class="card">
             <div class="card-body">
+              <img src="<%= product.image.url %>" height=150 width=150 class='img'>
               <h5 class="card-title"><%= product.name %></h5>
-              <p class="card-text">|상태| : <%= product.status %>
-                |가격| : <%= product.price %>
-                |수령 장소| : <%= product.address_num %>
+              <p class="card-text">
+                <% if product.status %>
+          <div class = 'complete'>나눔 완료</div>
+          <% else %>
+          <div class = 'yet'>나눔 가능</div>
+          <% end %>
+                |가격| : 1000   |수령 장소| : <%= product.delivery %>
 
               </p>
             </div>    
           <div class="middle">
-              <a href="/products/<%= product.id %>" class="btn btn-primary btn-spec">Go somewhere</a>
+              <a href="/products/<%= product.id %>" class="btn btn-primary btn-spec">상세보기</a>
           </div>
         </div>
       </div>
@@ -103,7 +108,13 @@
         
         <td><%= product.price %></td>
         <td><%= product.delivery %></td>
-        <td><%= product.status %></td>
+        <td>
+          <% if product.status %>
+          <div class = 'complete'>완료</div>
+          <% else %>
+          <div class = 'yet'>가능</div>
+          <% end %>
+          </td>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td><%= link_to 'Destroy', product, method: "delete", data: { confirm: 'Are you sure?' } %></td>
@@ -119,3 +130,13 @@
 
 </body>
 </html>
+<style>
+.complete {
+  color: red;
+}
+.yet {
+  color: blue;
+}
+.img{
+  float: left;
+}
