@@ -9,17 +9,32 @@
 *{
     box-sizing:border-box;
     /*border:1px solid black;*/
+    color:black;
 }
 body {
     font-family: "Lato", sans-serif;
     margin:0 auto;
-    ov
-    
+    width:100vw;
 }
+
+.login-nav{
+  text-align:right;
+  padding:50px 100px;
+
+  height:50px;
+  width:100%;
+  margin-bottom:40px;
+}
+
+.nav-button{
+  padding:20px;
+}
+
 
  .home_section{
     display:flex;
     justify-content:center;
+    text-align:center;
 }
  .home_section1{
     background-image:url("/giving hand.png");
