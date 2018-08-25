@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
     def create
       	message=Message.create(message_params)
-      	redirect_to '/'
+      	redirect_to 'conversation/show/:conversation_id'
     end
 
     private

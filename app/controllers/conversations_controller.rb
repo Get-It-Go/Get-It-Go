@@ -4,7 +4,7 @@ class ConversationsController < ApplicationController
 
     def create
     	conversation=Conversation.create(conversation_params)
-    	redirect_to '/'
+    	redirect_to 'conversation/show/:conversation_id'
     end
     def show
     	@messages=Conversation.find(params[:conversation_id]).messages
@@ -20,13 +20,13 @@ class ConversationsController < ApplicationController
     def check_duplication
     	if Conversation.where(user1_id: params[:user1_id], user2_id: params[:user2_id],
     	   product_id: params[:product_id]).count != 0
-           redirect_to '/' 
+           redirect_to 'conversation/show/:conversation_id' 
            return
     	end
 
     	if Conversation.where(user1_id: params[:user2_id], user2_id: params[:user1_id],
     	   product_id: params[:product_id]).count != 0
-    	   redirect_to '/'
+    	   redirect_to 'conversation/show/:conversation_id'
     	   return		
     	end	
     end
