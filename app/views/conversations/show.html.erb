@@ -5,4 +5,8 @@
 
 <br>
 ----------------------------------------------------------<br>
-
+<%= form_tag("/messages", method: "post") do %>
+  <%= hidden_field_tag 'sender_id', current_user.id %>
+  <%= text_field_tag(:content) %>
+  <%= submit_tag("쪽지보내기") %>
+<% end %>
