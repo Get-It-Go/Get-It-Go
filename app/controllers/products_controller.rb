@@ -5,11 +5,15 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @cate = params[:cate]
-    if @cate.nil?
+    if params[:search]
+      @products = Product.search(params[:search]).all
+      @cate = "검색"
+    elsif @cate.nil?
       @products = Product.all
     else
       @products = Product.where(category: @cate)
     end
+
   end
 
   # GET /products/1

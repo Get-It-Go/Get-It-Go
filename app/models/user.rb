@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[facebook google_oauth2 kakao]
+  has_many :products
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
@@ -14,5 +15,7 @@ class User < ApplicationRecord
      # user.skip_confirmation!
       # user.image = auth.info.image # assuming the user model has an image
     end
+
 	end
+
 end	
