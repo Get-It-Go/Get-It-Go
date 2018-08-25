@@ -58,12 +58,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-<<<<<<< HEAD
+
 #gem 'mysql2'
-=======
+
 
 
 gem 'mini_magick'
 gem 'fog-aws'
 
->>>>>>> 0bb0c24e42d62d6b60e82c802992a432886106f6
