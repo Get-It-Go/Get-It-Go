@@ -17,54 +17,33 @@
   </div>
 
   <div class="field">
-    <%= form.label :물건명 %>
     <%= form.label :물건명 %><br>
     <%= form.text_area :name, id: :product_name %>
   </div>
   <div class="field">
-    <%= form.label :"설명(물건의 상태)" %>
-    <%= form.text_area :content, id: :product_content %>
     <%= form.label :가격 %><br>
     <%= form.text_area :price, id: :product_price, placeholder: "1000원" %>
   </div>
   <div class="field">
-    <%= form.label :가격 %>
-    <%= form.text_area :price, id: :product_price %>
     <%= form.label :"설명(물건의 상태)" %><Br>
     <%= form.text_area :content, id: :product_content %>
   </div>
 
-  <div class="field">
-    <%= form.label :사진 %>
-    <%= form.file_field :image, id: :product_image %>
-  </div>
   
 
   <div class="field">
-    <%= form.label :전달방법 %>
-    <%= form.select :delivery, options_for_select(["하나를 고르세요", "1:1전해주기", "두고가기"], :disabled => ["하나를 고르세요"]) %>
     <%= form.label :사진 %><Br>
     <%= form.file_field :image, id: :product_image %>
   </div>
-
   <Br>
   <div class="field">
-    <%= form.label :우편번호 %>
-    <%= form.text_area :address_num, id: :product_address_num %>
     <%= form.label :전달방법 %><Br>
     <%= form.select :delivery, options_for_select(["하나를 고르세요", "벨라르미노", "곤자가","1:1직접전달"], :disabled => ["하나를 고르세요"]) %>
   </div>
-
   <br>
   <div class="field">
-    <%= form.label :주소 %>
     <%= form.label :주소 %><Br>
     <%= form.text_area :address_text, id: :product_address_text %>
-  </div>
-
-  <div class="field">
-    <%= form.label :상세주소 %>
-    <%= form.text_area :address_text2, id: :product_address_text2 %>
   </div>
 
   <div class="field">
