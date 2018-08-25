@@ -8,6 +8,10 @@
   <%= @product.name %>
 </p>
 
+<!-- Like -->
+<div>
+  <%= image_tag 'like.png', onclick: "hello(this);", style: "height: 15%; width: 15%;" %>
+</div>
 <p>
   <strong>설명(상태):</strong>
   <%= @product.content %>
@@ -67,3 +71,14 @@
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
+
+    <script>
+        function hello(elem){
+            elem.src = "<%= asset_path("unlike.png")%>";
+            elem.setAttribute("onclick","hello2(this)")
+        }
+        function hello2(elem){
+            elem.src = "<%= asset_path("like.png")%>";
+            elem.setAttribute("onclick", "hello(this)")
+        }
+    </script>
