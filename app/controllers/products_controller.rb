@@ -19,6 +19,21 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    if current_user
+      @exist_flag=false
+      conversation1 = Converstion.where(user1_id: current_user, user2_id: @product.user_id, product_id: @product.id)
+      if(conversation1.count==1)
+        @exist_flag=true
+        @conversation=conversation1[0]
+        return 
+      end  
+      conversation2 = Converstion.where(user1_id: @product.user_id, user2_id: current_user, product_id: @product.id)  
+      if(conversation2.count==1)
+        @exist_flag=true
+        @conversation=conversation2[0]
+        return
+      end
+    end  
   end
 
   # GET /products/new
