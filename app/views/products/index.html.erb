@@ -1,18 +1,7 @@
-u<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
 <head>
-<style>
-  
-  body{
-    background-image: url("/oneroom.jpg"); 
-    background-size:cover;
-    background-repeat:no-repeat;
-    
-    width:100vw;
-  }
-
-</style>
 </head>
 <body>
 
@@ -32,8 +21,8 @@ u<!DOCTYPE html>
     <a href="/products?cate=생활잡화">생활잡화</a>
     <a href="/products?cate=식품">식품</a>
   </div>
-   <nav>
-    <span style="font-size:30px;margin:20px 10px;cursor:pointer" onclick="openNav()">&#9776; </span>
+  <nav>
+    <span style="font-size:30px;padding:50px;margin-top:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
   </nav>
    <script>
   function openNav() {
@@ -58,7 +47,7 @@ u<!DOCTYPE html>
               </p>
             </div>    
           <div class="middle">
-            <a href="#" class="btn btn-primary btn-spec">Go somewhere</a>
+              <a href="/products/<%= product.id %>" class="btn btn-primary btn-spec">Go somewhere</a>
           </div>
         </div>
       </div>

@@ -1,1 +1,69 @@
-<!-- 메인페이지 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	*{
+		
+	}
+		body{
+			margin :0;
+			padding:0;
+			width:100vw;
+			height:100vh;
+		}
+		.picture-container{
+			width:100vw;
+			flex-wrap:wrap;
+			display:flex;
+			position:relative;
+
+		}
+		.vector-picture{
+			width:100%;
+			height:100%;
+			/*float:left;*/
+		position:relative;
+		}
+		.vector-picture img{
+			width:100vw;
+			height:100vh;
+			z-index:1;
+
+		}
+		.refrigerator{
+			position:absolute;
+			bottom:300px;
+			left: 100px;
+			z-index:2;
+		}
+		.plate{
+			position:absolute;
+			top:20px;
+			right:150px;
+			height:15px;
+			z-index:2;
+		}	
+		.pot{
+			z-index:2;
+			position:absolute;
+
+		} 
+
+	</style>
+
+</head>
+
+
+<body>
+
+<div class="picture-container">
+	<div class="vector-picture"><img src="/kitchen final.png"></div>
+	<div class="slipper"><a href=""><img src="/slipper.png"></a></div>
+	<div class="mirror"><a href=""><img src="/mirror.png"></a></div>
+	<div class="bed"><img src="/bed.png"></a></div>
+	
+</div>
+
+
+</body>
+</html>

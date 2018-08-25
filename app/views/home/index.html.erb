@@ -1,18 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body style="height:100vh; overflow-y:hidden">
+<nav class="login-nav">
+  		<% if current_user %>
+        <%= link_to "Logout",destroy_user_session_path, method: :get, class:"nav-button"  %>
+        <%= link_to "edit",edit_user_registration_path, method: :get, class:"nav-button" %>
+      <% else %>
+        <%= link_to "Register",new_user_registration_path, method: :get, class:"nav-button" %>
+        <%= link_to "Login",new_user_session_path, method: :get, class:"nav-button" %>
+      <%end%>
+    </nav>
+    
+
 <div class="home_section">
 	<div class="home_section1">
-		<div class="card-body">
+		
 			<% if user_signed_in? %>
 				<%= link_to '나눌래요', new_product_path %>
 			<% else %>
 				<%= link_to '나눌래요', new_user_session_path, method: :get %>
-			<% end %>
-		</div>
+			<% end %>	
 	</div>
 	<div class="home_section2">
 		<%= link_to '받을래요', '/products' %>
 	</div>
+<<<<<<< HEAD
+</div>
+</body>
+</html>
+=======
 	관리자
 	<%= link_to '등록', new_product_path %>
 	
 	<%= link_to '목록관리', '/products' %>
 </div>
+>>>>>>> ccb70ef808ad40b40f52b0035847e5a4364dca38
