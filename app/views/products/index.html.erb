@@ -22,7 +22,16 @@
     <a href="/products?cate=식품">식품</a>
   </div>
   <nav>
-    <span style="font-size:30px;padding:50px;margin-top:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+    <span style="font-size:30px;padding:50px;margin-top:30px;cursor:pointer" onclick="openNav()" class='menu'>&#9776; </span>
+    <div class='search'>
+  <%= form_tag(products_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "검색어를 입력하세요" %>
+    <%= submit_tag "검색", name: nil %>
+  <% end %>
+
+  <%= image_tag 'logo.png' , style: 'height: 13%; width: 13%; align="center"' %>
+
+</div>
   </nav>
    <script>
   function openNav() {
@@ -33,21 +42,27 @@
   }
   </script>
   
+  <p id="notice"><%= notice %></p>
+
+
+
+<h1><%=@cate%></h1>
+
   <div class="main_section">
     <div class="row">
       <% @products.each do |product| %>
         <div class="col-sm-6">
           <div class="card">
             <div class="card-body">
-              <img src="<%= product.image.url %>" height=150 width=150 class='img'>
-              <h5 class="card-title"><%= product.name %></h5>
+              <img src="<%= product.image.url %>" height=200 width=200 class='img'>
+              <h5 class="card-title">&nbsp;<%= product.name %></h5>
               <p class="card-text">
                 <% if product.status %>
-          <div class = 'complete'>나눔 완료</div>
+          <div class = 'complete'>&nbsp;&nbsp;나눔 완료</div>
           <% else %>
-          <div class = 'yet'>나눔 가능</div>
+          <div class = 'yet'>&nbsp;나눔 가능</div>
           <% end %>
-                |가격| : 1000   |수령 장소| : <%= product.delivery %>
+                &nbsp; |가격| : 1000  &nbsp; |수령 장소| : <%= product.delivery %>
 
               </p>
             </div>    
@@ -76,18 +91,9 @@
     </div>
   </div>
 --> 
-<p id="notice"><%= notice %></p>
 
 
-<p>
-  <%= form_tag(products_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "검색어를 입력하세요" %>
-    <%= submit_tag "검색", name: nil %>
-  <% end %>
-</p>
-<h1><%=@cate%> Products</h1>
-
-
+<!--
 <table>
   <thead>
     <tr>
@@ -123,7 +129,7 @@
     <% end %>
   </tbody>
 </table>
-
+-->
 <br>
 
 <%= link_to 'New Product', new_product_path %>
@@ -131,6 +137,7 @@
 </body>
 </html>
 <style>
+
 .complete {
   color: red;
 }
@@ -140,3 +147,15 @@
 .img{
   float: left;
 }
+h1{
+text-align: center;
+}
+img{
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+</style>
