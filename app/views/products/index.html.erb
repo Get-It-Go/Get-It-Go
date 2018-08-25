@@ -68,7 +68,23 @@
 --> 
 <p id="notice"><%= notice %></p>
 
-<h1>Products</h1>
+<%= link_to "ALL" ,'/products'%>
+<%= link_to "가구" ,'/products?cate=가구'%>
+<%= link_to "청소" ,'/products?cate=청소'%>
+<%= link_to "욕실" ,'/products?cate=욕실'%>
+<%= link_to "세탁" ,'/products?cate=세탁'%>
+<%= link_to "주방" ,'/products?cate=주방'%>
+<%= link_to "문구" ,'/products?cate=문구'%>
+<%= link_to "생활잡화" ,'/products?cate=생활잡화'%>
+
+<p>
+  <%= form_tag(products_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "검색어를 입력하세요" %>
+    <%= submit_tag "검색", name: nil %>
+  <% end %>
+</p>
+<h1><%=@cate%> Products</h1>
+
 
 <table>
   <thead>
