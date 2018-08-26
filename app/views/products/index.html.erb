@@ -63,7 +63,7 @@
                 <% if product.status %>
           <div class = 'complete'>&nbsp;&nbsp;나눔 완료</div>
           <% else %>
-          <div class = 'yet'>&nbsp;나눔 가능</div>
+          <div /class = 'yet'>&nbsp;나눔 가능<div>
           <% end %>
                 &nbsp; |가격| : 1000  &nbsp; |수령 장소| : <%= product.delivery %>
 
@@ -135,7 +135,13 @@
 -->
 <br>
 
+
 <%= link_to '물건등록', new_product_path %>
+
+
+<center>
+<%= link_to '나눌 물품 등록하러 가기', new_product_path %>
+</center>
 
 </body>
 </html>
@@ -168,3 +174,4 @@ nav{
 }
 
 </style>
+
