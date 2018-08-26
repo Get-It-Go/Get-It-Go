@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get "/products/:id/complete" => "products#complete"
   get "/home" => "home#index"
   get '/home/main' => "home#main"
+  get '/products/make_true/:id' => "products#make_true"
 end 
