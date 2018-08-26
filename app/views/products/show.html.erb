@@ -326,20 +326,15 @@ img{
     <a href="/products?cate=생활잡화">생활잡화</a>
     <a href="/products?cate=식품">식품</a>
   </div>
-  <nav>
+  <nav style="display:block">
     <span style="font-size:30px;padding:50px;margin-top:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
   </nav>
-   <script>
-  function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-  }
-   function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-  }
-  </script>
+  
 
 <div style="width:100vw; margin:0 auto">
+  <a href="/home">
   <%= image_tag 'logo.png' , style: 'height: 200px; width: 200px; margin:0 auto;display:block' %>
+  </a>
 </div>
 <div class="container">
 <div class="col-xs-12 col-md-12">
@@ -373,16 +368,16 @@ img{
               </a>                            
 
             </h5>
-            <p class="price-container">
+      
+        </div>
+        <div class="description">
+          <p class="price-container">
               <span>
                 <p><br>
                   <strong>권장 가격:</strong>
                   <%= @product.price %> 원 
                 </p></span>
             </p>
-            <span class="tag1"></span> 
-        </div>
-        <div class="description">
           <p><strong>물건 상태 : </strong>
             <%= @product.content %>
           </p>
@@ -390,9 +385,9 @@ img{
             <strong>수령 장소:</strong>
             <%= @product.delivery %>
           </p>
-          <div>
-            <%= image_tag 'like.png', onclick: "hello(this);", style: "height:30px; width:30px;" %>
-          </div>
+          <div style="display:block">
+              <%= image_tag 'like.png', onclick: "hello(this);", style: "height:50px; width:50px; float:right; margin:20px" %>
+            </div>
         </div>
   
       </div>
@@ -408,7 +403,14 @@ img{
 
 <p id="notice"><%= notice %></p>
 
-
+ <script>
+  function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+  }
+   function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+  }
+  </script>
 
 
 
