@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
     @cate = params[:cate]
     if params[:search]
       @products = Product.search(params[:search]).all
-      @cate = "검색"
+      @cate = "'"+params[:search]+"' " +"검색 결과"
     elsif @cate.nil?
       @products = Product.all
       @cate = "전체"
