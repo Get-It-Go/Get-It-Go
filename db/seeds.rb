@@ -8,7 +8,7 @@ content_ls=["이번 학기초에 사서 화장실 슬리퍼로 이용했어요! 
             "세제 너무 무겁네요 그저 가저가세여!",
             "다이소에서 비싸게 사지 마시고 가져가세요! 고급진 플라스틱 옷걸이 입니다!"
             ]
-status_ls=["중","최상","최상","중","최상","중"]
+
 delivery_ls=["곤자가","곤자가","곤자가","벨라","벨라","벨라"]
 
 1.times do |user|
@@ -24,7 +24,7 @@ end
   	       category: "생활용품",
            name: name_ls[product],
            content: content_ls[product],
-           status: status_ls[product],
+           status: "false",
            image: "http://placehold.it/350x200",
            price: "1000",
            delivery: delivery_ls[product],

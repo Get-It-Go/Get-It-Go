@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy, :complete]
+  before_action :set_product, only: [:show, :edit, :update, :destroy, :complete, :make_true]
   before_action :authenticate_user!, only: [:new]
   # GET /products
   # GET /products.json
@@ -16,6 +16,14 @@ class ProductsController < ApplicationController
     end
 
   end
+
+  def make_true
+    
+    @product.status = true
+    @product.save
+    redirect_to action: 'show'
+
+  end  
 
   # GET /products/1
   # GET /products/1.json
